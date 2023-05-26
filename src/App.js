@@ -7,6 +7,7 @@ import CatalogDetail from './pages/CatalogDetail';
 import { Helmet } from 'react-helmet';
 import NotFound from './pages/NotFound';
 import NewMovie from './pages/NewMovie'
+import Reactmovieflex from './components/reactmovieflex';
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
           <Route exact path="/newMovie" element={<NewMovie />} />
 
           <Route exact path='*' element={<NotFound />} />
-          <Route path="/reactmovieflex/" element={<Navigate to="/" />} />
+          <Route exact path="/reactmovieflex/" element={<Reactmovieflex />} />
 
 
         </Routes>
