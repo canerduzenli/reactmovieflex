@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/newMovie" element={<NewMovie />} />
 
           <Route exact path='*' element={<NotFound />} />
-          <Route path="/reactmovieflex" element={<Navigate to="/" />} />
+          <Route path="/reactmovieflex/" element={<Navigate to="/" />} />
 
 
         </Routes>
