@@ -2,11 +2,12 @@ import './style/index.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Catalog from './pages/Catalog';
-import { Routes, Route } from 'react-router-dom';
+import { Navigate, Routes, Route } from 'react-router-dom';
 import CatalogDetail from './pages/CatalogDetail';
 import { Helmet } from 'react-helmet';
 import NotFound from './pages/NotFound';
 import NewMovie from './pages/NewMovie'
+
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           <Route exact path="/newMovie" element={<NewMovie />} />
 
           <Route exact path='*' element={<NotFound />} />
+          <Route path="/reactmovieflex" element={<Navigate to="/" />} />
+
+
         </Routes>
       </div>
       <footer>
