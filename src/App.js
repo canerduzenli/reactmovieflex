@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import './style/index.css';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Catalog from './pages/Catalog';
+import { Routes, Route } from 'react-router-dom';
+import CatalogDetail from './pages/CatalogDetail';
+import { Helmet } from 'react-helmet';
+import NotFound from './pages/NotFound';
+import NewMovie from './pages/NewMovie'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+      </Helmet>
+      <header>
+        <Header />
+
       </header>
-    </div>
+      <div className="App"
+      >
+        <Routes>
+          <Route exact path="/" element={<Catalog />} />
+          <Route exact path="/catalog/:id" element={<CatalogDetail />} />
+          <Route exact path="/newMovie" element={<NewMovie />} />
+
+          <Route exact path='*' element={<NotFound />} />
+        </Routes>
+      </div>
+      <footer>
+        <Footer />
+      </footer>
+    </>
   );
 }
 
